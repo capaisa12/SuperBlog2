@@ -34,6 +34,8 @@ gem 'bcrypt', '~> 3.1.7'
 # Aplicativo para mostrar un avatar o imagen
 gem 'gravatar-ultimate'
 
+gem 'annotate'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
