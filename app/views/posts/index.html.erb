@@ -1,17 +1,21 @@
 <div class="container">
-  <h1>Publicaciones</h1>
-  <div>
-    <%= link_to "Nuevo Post", new_post_path, class:"btn btn-primary" %>
-  </div>
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
+      <div class="posts">
         <% @post.each do |post| %>
-          <h2><a href="/posts/<%= post.id %>" data-toggle="tooltip" title="Ver mas..."><%= post.title %></a></h2>
-          <small>Publicado por <%= post.email %> hace <%= post.created_at %> </small>
-          <h5><p><%= post.content %></p></h5>
-            <%= link_to "<span class='glyphicon glyphicon-pencil' data-toggle='tooltip' title='Editar post'><span>".html_safe, edit_post_path(post), class: "edit-post-btn" %>
-            <%= link_to "<span class='glyphicon glyphicon-trash' data-toggle='tooltip' title='Eliminar post'><span>".html_safe, post, method: :delete, data: { confirm: "¿Estás seguro de eliminar esta habitación?" }, class: "destroy-room-btn" %>
+        <div class="post clearfix">
+          <div class="post-details">
+            <span class="post-title" data-toggle="tooltip" title="Ver Post..."><%= link_to post.title, post %></span>
+            <span class="post-author">Publicado por <%= post.email %> hace <%= post.created_at %></span>
+            <span class="post-description"><%= post.content %></span>
+            <% if signed_in? %>
+              <%= link_to "<span class='glyphicon glyphicon-pencil' data-toggle='tooltip' title='Editar post'><span>".html_safe, edit_post_path(post), class: "edit-post-btn" %>
+              <%= link_to "<span class='glyphicon glyphicon-trash' data-toggle='tooltip' title='Eliminar post'><span>".html_safe, post, method: :delete, data: { confirm: "¿Estás seguro de eliminar esta habitación?" }, class: "destroy-room-btn" %>
+            <% end %>
+          </div>
+        </div>
         <% end %>
+      </div>
     </div>
   </div>
 </div>
