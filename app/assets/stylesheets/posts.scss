@@ -1,5 +1,5 @@
 .posts {
-  margin-top: 40px;
+  margin-top: 20px;
 
   .post {
     padding: 15px 10px;
@@ -12,7 +12,7 @@
 
       .post-title a {
         color: #303030;
-        font-size: 21px;
+        font-size: 26px;
         line-height: 1;
 
         &:hover, &:focus { color: #F04500; text-decoration: none; }
@@ -22,13 +22,27 @@
         display: block;
         color: #999;
         font-size: 12px;
+        margin-top: 10px;
       }
 
 
       .post-description {
         display: block;
-        color: #999;
+        color: #3B3B3B;
         font-size: 16px;
+        margin-top: 15px;
+      }
+    }
+    .product-comments {
+      float: right;
+      color: #ccc;
+      padding: 10px;
+
+      .glyphicon { font-size: 21px; }
+      .comment-count {
+        margin-left: 15px;
+        font-size: 18px;
+        vertical-align: text-bottom;
       }
     }
   }
@@ -41,7 +55,7 @@
     text-align: center;
     padding: 100px 25px;
     margin-top: -20px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 
     h1 {
       font-size: 32px;
@@ -88,12 +102,17 @@
 
 .actions {
   margin-top: 30px;
+  float: right;
+  color: #ccc;
+  padding: 10px;
+  font-size: 18px;
 
   a {
-    color: #ccc;
-    font-size: 18px;
+    color: #ccc;    
     margin-right: 2px;
 
     &:hover { color: #F04500; }
+
+
   }
 }

@@ -1,19 +1,25 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-6 col-sm-offset-3">
+    <div class="col-sm-8 col-sm-offset-2">
       <div class="posts">
+        <h1 style="text-align: center">PUBLICACIONES SUPER BLOG</h1>
         <% @post.each do |post| %>
         <div class="post clearfix">
           <div class="post-details">
-            <span class="post-title" data-toggle="tooltip" title="Ver Post..."><%= link_to post.title, post %></span>
-            <span class="post-author">Publicado por <%= post.user_id %> hace <%= post.created_at %></span>
+            <span class="post-title" data-toggle="tooltip" title="Ver Post..."><strong><%= link_to post.title, post %></strong></span>
+            <span class="post-author">Publicado por <%= post.user.email %> hace <%= post.created_at %></span>
             <span class="post-description"><%= post.content %></span>
-            <% if signed_in? && post.user == current_user %>
+
             <div class="actions">
+            <% if signed_in? && post.user == current_user %>
               <%= link_to "<span class='glyphicon glyphicon-pencil' data-toggle='tooltip' title='Editar post'><span>".html_safe, edit_post_path(post), class: "edit-post-btn" %>
               <%= link_to "<span class='glyphicon glyphicon-trash' data-toggle='tooltip' title='Eliminar post'><span>".html_safe, post, method: :delete, data: { confirm: "¿Estás seguro de eliminar esta habitación?" }, class: "destroy-room-btn" %>
-            </div>
             <% end %>
+            <!-- <div class="product-comments"> -->
+              <span class="glyphicon glyphicon-comment" data-toggle='tooltip' title='Comentarios'></span>
+              <span class="comment-count" data-toggle='tooltip' title='Numero de Comentarios'><%= post.comments.count %></span>
+            <!-- </div> -->
+            </div>
           </div>
         </div>
         <% end %>
