@@ -85,3 +85,15 @@
     }
   }
 }
+
+.actions {
+  margin-top: 30px;
+
+  a {
+    color: #ccc;
+    font-size: 18px;
+    margin-right: 2px;
+
+    &:hover { color: #F04500; }
+  }
+}
