@@ -6,11 +6,13 @@
         <div class="post clearfix">
           <div class="post-details">
             <span class="post-title" data-toggle="tooltip" title="Ver Post..."><%= link_to post.title, post %></span>
-            <span class="post-author">Publicado por <%= post.email %> hace <%= post.created_at %></span>
+            <span class="post-author">Publicado por <%= post.user_id %> hace <%= post.created_at %></span>
             <span class="post-description"><%= post.content %></span>
-            <% if signed_in? %>
+            <% if signed_in? && post.user == current_user %>
+            <div class="actions">
               <%= link_to "<span class='glyphicon glyphicon-pencil' data-toggle='tooltip' title='Editar post'><span>".html_safe, edit_post_path(post), class: "edit-post-btn" %>
               <%= link_to "<span class='glyphicon glyphicon-trash' data-toggle='tooltip' title='Eliminar post'><span>".html_safe, post, method: :delete, data: { confirm: "¿Estás seguro de eliminar esta habitación?" }, class: "destroy-room-btn" %>
+            </div>
             <% end %>
           </div>
         </div>
