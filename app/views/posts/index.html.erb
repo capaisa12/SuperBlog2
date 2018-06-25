@@ -18,7 +18,7 @@
               <% end %>
             <% end %>
             <span class="post-author">Publicado por <%= post.user.email %> hace <%= ((Time.now - post.created_at)/86400).to_i %> Dias</span>
-            <span class="post-description" ><%= truncate(post.content, :length => 250 , :seperator => ' ') %><%= link_to "Ver mas", post %></span>
+            <span class="post-description" ><%= truncate(strip_tags( markdown(post.content) ), :length => 250 , :seperator => ' ') %><%= link_to "Ver mas", post %></span>
             <div class="actions">
             <% if signed_in? && post.user == current_user %>
               <%= link_to "<span class='glyphicon glyphicon-pencil' data-toggle='tooltip' title='Editar post'><span>".html_safe, edit_post_path(post), class: "edit-post-btn" %>
