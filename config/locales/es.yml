@@ -5,6 +5,7 @@ es:
       invalid: "es inválido"
       record_invalid: "La validacion falló: %{errors}"
       too_short: "no cumple con la longitud requerida"
+      taken: "ya se encuentra registrado"
 
   activerecord:
     attributes:
