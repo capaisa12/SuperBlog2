@@ -13,7 +13,13 @@
 class Post < ApplicationRecord
   belongs_to :user
   has_many :comments
+  has_many :votes
   validates :title, presence: true
   validates :content, presence: true
+  validates :content, length: { minimum: 250 }
+
+  def voted_by?(user)
+    votes.exists?(user: user)
+  end
 
 end

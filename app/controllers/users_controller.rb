@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to root_path
+      redirect_to root_path, notice: "El usuario ha sido registrado exitosamente!", alert: "Debe loguearse para poder interactuar con el sitio"
     else
       render :new
     end
