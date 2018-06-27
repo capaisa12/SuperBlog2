@@ -3,6 +3,9 @@ es:
     messages:
       blank: "no puede estar en blanco"
       invalid: "es inválido"
+      record_invalid: "La validacion falló: %{errors}"
+      too_short: "no cumple con la longitud requerida"
+      taken: "ya se encuentra registrado"
 
   activerecord:
     attributes:
@@ -13,3 +16,25 @@ es:
         title: "Nombre"
         content: "Contenido"
         email: "Correo"
+  date:
+    abbr_day_names:
+      - dom
+      - lun
+      - mar
+      - mie
+      - jue
+      - vie
+      - sab
+    abbr_month_names:
+      - ene
+      - feb
+      - mar
+      - abr
+      - may
+      - jun
+      - jul
+      - ago
+      - sep
+      - oct
+      - nov
+      - dic

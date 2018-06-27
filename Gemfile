@@ -35,7 +35,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'gravatar-ultimate'
 
 gem 'annotate'
-
+gem 'redcarpet'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

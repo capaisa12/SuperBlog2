@@ -10,8 +10,9 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
       sign_in(user)
-      redirect_to root_path
+      redirect_to root_path, alert: "Bienvenido a SuperBlog, en este espacio usted podra crear nuevos post, editar o eliminar los que sean de su propiedad y votar o comentar cualquiera de los post que mas le gusten."
     else
+      flash[:danger] = 'Tu email y/o contraseña son inválidas. Intenta nuevamente.'
       render :new
     end
   end
