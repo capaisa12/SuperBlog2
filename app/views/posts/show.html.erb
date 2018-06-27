@@ -3,14 +3,17 @@
     <header class="post-header">
       <h1><%= @post.title %></h1>
       <p><%= markdown(@post.content) %></p>
-    </header>
-  </div>
-  <div class="container">
-    <div class="row">
+      <div class="actions">
       <% if signed_in? && @post.user == current_user %>
         <%= link_to "<span class='glyphicon glyphicon-pencil' data-toggle='tooltip' title='Editar post'><span>".html_safe, edit_post_path(@post), class: "edit-post-btn" %>
         <%= link_to "<span class='glyphicon glyphicon-trash' data-toggle='tooltip' title='Eliminar post'><span>".html_safe, @post, method: :delete, data: { confirm: "¿Estás seguro de eliminar este Post?" }, class: "destroy-room-btn" %>
       <% end %>
+    </div>
+    </header>
+  </div>
+  <div class="container">
+    <div class="row">
+
       <div class="col-sm-8 col-sm-offset-2">
         <div class="votes">
           <h2>Votos: <%= @post.votes.count %></h2>
