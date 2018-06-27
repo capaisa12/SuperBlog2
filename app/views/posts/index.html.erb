@@ -11,7 +11,7 @@
                 <span class="upvote-arrow" data-toggle="tooltip" title="Votar"></span>
                 <span class="upvote-count" data-toggle="tooltip" title="No.Votos"><%= post.votes.count %></span>
               <% end %>
-            <% else %>
+            <% elsif signed_in? %>
               <%= link_to post_vote_path(post), method: :post, class: "post-upvote" do %>
                 <span class="upvote-arrow" data-toggle="tooltip" title="Votar"></span>
                 <span class="upvote-count" data-toggle="tooltip" title="No.Votos"><%= post.votes.count %></span>

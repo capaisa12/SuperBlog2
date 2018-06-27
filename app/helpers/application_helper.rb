@@ -7,7 +7,8 @@ module ApplicationHelper
                                 autolink: true,
                                 tables: true,
                                 underline: true,
-                                highlight: true
+                                highlight: true,
+
                                )
                                return markdown.render(content).html_safe
   end
